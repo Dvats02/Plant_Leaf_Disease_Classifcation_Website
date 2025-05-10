@@ -1,77 +1,128 @@
+Plant Disease Classification
+This project is a machine learning-based system for classifying various plant diseases using leaf images. The aim is to assist farmers and agricultural professionals in early detection and treatment, thereby improving crop health and yield.
 
-# Plant Disease Classification
+Table of Contents
+Project Overview
 
-This project is a machine learning-based system for classifying various diseases affecting potato crops using image data. The aim is to help farmers identify and treat diseases quickly to improve crop yield.
+Supported Diseases
 
-## Table of Contents
-- [Project Overview](#project-overview)
-- [Technologies Used](#technologies-used)
-- [Dataset](#dataset)
-- [Model Architecture](#model-architecture)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Results](#results)
-- [Contributing](#contributing)
-- [License](#license)
+Technologies Used
 
-## Project Overview
-Potato plants are susceptible to various diseases that can significantly reduce their yield. This project uses image classification techniques to automatically detect diseases in potato plant leaves. By leveraging a deep learning model, the system can classify different types of diseases such as late blight, early blight, etc.
+Dataset
 
-## Technologies Used
-- Python
-- TensorFlow/Keras
-- OpenCV
-- Scikit-learn
-- Pandas
-- Numpy
+Model Architecture
 
-## Dataset
-The dataset consists of images of potato leaves labeled with various diseases. It includes the following classes:
-- Early Blight
-- Late Blight
-- Healthy
+Installation
 
-The dataset can be downloaded from [Kaggle](https://www.kaggle.com/datasets) or another relevant source.
+Usage
 
-## Model Architecture
-The classification model is built using a Convolutional Neural Network (CNN) with the following layers:
-- Convolutional layers
-- Max-pooling layers
-- Fully connected layers
-- Softmax output for classification
+Results
 
-The model is trained on labeled images to classify the disease based on visual features.
+Contributing
 
-## Installation
-1. Clone this repository:
-   ```bash
-   git clone git@github.com:your-username/potato-disease-classification.git
-   ```
-2. Navigate to the project directory:
-   ```bash
-   cd potato-disease-classification
-   ```
-3. Install the required dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
+License
 
-## Usage
-1. Prepare your dataset by placing it in the `data/` directory.
-2. Run the training script to train the model:
-   ```bash
-   python train.py
-   ```
-3. Use the trained model to make predictions on new images:
-   ```bash
-   python predict.py --image path_to_image
-   ```
+Project Overview
+Leaves from different plants exhibit unique symptoms when affected by diseases. This project leverages deep learning to detect and classify a wide range of plant diseases using image classification. It uses a Convolutional Neural Network (CNN) trained on leaf images of various crops, enabling multi-crop support and robust disease recognition.
 
-## Results
-The model achieved an accuracy of over 90% on the validation dataset. More details on the training process and evaluation metrics can be found in the `results/` directory.
+Supported Diseases
+The model currently supports classification for the following diseases across various plant species:
 
-## Contributing
-Contributions are welcome! Please fork the repository and create a pull request for any enhancements or bug fixes.
+diff
+Copy
+Edit
+- Apple_scab
+- Black_rot
+- Cedar_apple_rust
+- Powdery_mildew
+- Cercospora_leaf_spot / Gray_leaf_spot
+- Common_rust
+- Northern_Leaf_Blight
+- Esca (Black_Measles)
+- Leaf_blight (Isariopsis_Leaf_Spot)
+- Haunglongbing (Citrus Greening)
+- Bacterial_spot
+- Early_blight
+- Late_blight
+- Leaf_scorch
+- Leaf_Mold
+- Septoria_leaf_spot
+- Spider_mites / Two-spotted_spider_mite
+- Target_Spot
+- Tomato_Yellow_Leaf_Curl_Virus
+- Tomato_mosaic_virus
+Some diseases are crop-specific, and class names may include both plant and disease for clarity.
 
-## License
-This project is licensed under the MIT License - see the LICENSE file for details.
+Technologies Used
+Python
+
+TensorFlow / Keras
+
+OpenCV
+
+Scikit-learn
+
+Pandas
+
+NumPy
+
+Dataset
+The dataset consists of labeled images of plant leaves exhibiting various disease symptoms. It has been collected from reliable sources such as Kaggle, agricultural databases, and public datasets for plant pathology.
+
+Model Architecture
+The image classification model uses a CNN with the following layers:
+
+Convolutional layers for feature extraction
+
+Max-pooling layers to reduce spatial dimensions
+
+Dense (fully connected) layers for classification
+
+Softmax activation for multi-class output
+
+Data augmentation, dropout, and batch normalization techniques are also applied to improve model generalization.
+
+Installation
+Clone the repository:
+
+bash
+Copy
+Edit
+git clone git@github.com:your-username/plant-disease-classification.git
+Navigate into the project folder:
+
+bash
+Copy
+Edit
+cd plant-disease-classification
+Install dependencies:
+
+bash
+Copy
+Edit
+pip install -r requirements.txt
+Usage
+Prepare your dataset and place images inside the data/ directory, organized by class.
+
+Train the model:
+
+bash
+Copy
+Edit
+python train.py
+Predict a disease from a new leaf image:
+
+bash
+Copy
+Edit
+python predict.py --image path_to_image.jpg
+Results
+The trained model achieves over 90% accuracy on the validation dataset across multiple plant species. It generalizes well on unseen data and can identify diseases even in visually complex leaf samples.
+
+Performance metrics and example predictions are available in the results/ directory.
+
+Contributing
+Contributions are welcome! If you find bugs or have suggestions, feel free to fork the repository and submit a pull request.
+
+License
+This project is licensed under the MIT License — see the LICENSE file for more details.
