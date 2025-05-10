@@ -1,285 +1,227 @@
-import { useState, useEffect } from "react";
-import { makeStyles, withStyles } from "@material-ui/core/styles";
-import AppBar from "@material-ui/core/AppBar";
-import Toolbar from "@material-ui/core/Toolbar";
-import Typography from "@material-ui/core/Typography";
-import Avatar from "@material-ui/core/Avatar";
-import Container from "@material-ui/core/Container";
-import React from "react";
-import Card from "@material-ui/core/Card";
-import CardContent from "@material-ui/core/CardContent";
-import { Paper, CardActionArea, CardMedia, Grid, TableContainer, Table, TableBody, TableHead, TableRow, TableCell, Button, CircularProgress } from "@material-ui/core";
-import cblogo from "./cblogo.PNG";
-import image from "./bg.png";
-import { DropzoneArea } from 'material-ui-dropzone';
-import { common } from '@material-ui/core/colors';
-import Clear from '@material-ui/icons/Clear';
-import axios from 'axios';
+import React, { useState } from 'react';
+import './index.css';
 
-const ColorButton = withStyles((theme) => ({
-  root: {
-    color: theme.palette.getContrastText(common.white),
-    backgroundColor: common.white,
-    '&:hover': {
-      backgroundColor: '#ffffff7a',
-    },
-  },
-}))(Button);
+function LeafScanLogo() {
+  return (
+    <div className="logo-container">
+      <svg width="80" height="80" viewBox="0 0 200 200">
+        {/* Circle background */}
+        <circle cx="100" cy="100" r="90" fill="#4CAF50" opacity="0.15" />
 
-const useStyles = makeStyles((theme) => ({
-  grow: {
-    flexGrow: 1,
-  },
-  clearButton: {
-    width: "-webkit-fill-available",
-    borderRadius: "15px",
-    padding: "15px 22px",
-    color: "#000000a6",
-    fontSize: "20px",
-    fontWeight: 900,
-  },
-  root: {
-    maxWidth: 345,
-    flexGrow: 1,
-  },
-  media: {
-    height: 400,
-  },
-  paper: {
-    padding: theme.spacing(2),
-    margin: 'auto',
-    maxWidth: 500,
-  },
-  gridContainer: {
-    justifyContent: "center",
-    padding: "4em 1em 0 1em",
-  },
-  mainContainer: {
-    backgroundImage: `url(${image})`,
-    backgroundRepeat: 'no-repeat',
-    backgroundPosition: 'center',
-    backgroundSize: 'cover',
-    height: "93vh",
-    marginTop: "8px",
-  },
-  imageCard: {
-    margin: "auto",
-    maxWidth: 400,
-    height: 500,
-    backgroundColor: 'transparent',
-    boxShadow: '0px 9px 70px 0px rgb(0 0 0 / 30%) !important',
-    borderRadius: '15px',
-  },
-  imageCardEmpty: {
-    height: 'auto',
-  },
-  noImage: {
-    margin: "auto",
-    width: 400,
-    height: "400 !important",
-  },
-  input: {
-    display: 'none',
-  },
-  uploadIcon: {
-    background: 'white',
-  },
-  tableContainer: {
-    backgroundColor: 'transparent !important',
-    boxShadow: 'none !important',
-  },
-  table: {
-    backgroundColor: 'transparent !important',
-  },
-  tableHead: {
-    backgroundColor: 'transparent !important',
-  },
-  tableRow: {
-    backgroundColor: 'transparent !important',
-  },
-  tableCell: {
-    fontSize: '22px',
-    backgroundColor: 'transparent !important',
-    borderColor: 'transparent !important',
-    color: '#000000a6 !important',
-    fontWeight: 'bolder',
-    padding: '1px 24px 1px 16px',
-  },
-  tableCell1: {
-    fontSize: '14px',
-    backgroundColor: 'transparent !important',
-    borderColor: 'transparent !important',
-    color: '#000000a6 !important',
-    fontWeight: 'bolder',
-    padding: '1px 24px 1px 16px',
-  },
-  tableBody: {
-    backgroundColor: 'transparent !important',
-  },
-  text: {
-    color: 'white !important',
-    textAlign: 'center',
-  },
-  buttonGrid: {
-    maxWidth: "416px",
-    width: "100%",
-  },
-  detail: {
-    backgroundColor: 'white',
-    display: 'flex',
-    justifyContent: 'center',
-    flexDirection: 'column',
-    alignItems: 'center',
-  },
-  appbar: {
-    background: '#be6a77',
-    boxShadow: 'none',
-    color: 'white'
-  },
-  loader: {
-    color: '#be6a77 !important',
-  }
-}));
-export const ImageUpload = () => {
-  const classes = useStyles();
-  const [selectedFile, setSelectedFile] = useState();
-  const [preview, setPreview] = useState();
-  const [data, setData] = useState();
-  const [image, setImage] = useState(false);
-  const [isLoading, setIsloading] = useState(false);
-  let confidence = 0;
+        {/* Leaf shape */}
+        <path
+          d="M100,30 C140,30 160,75 160,110 C160,145 130,170 100,170 C70,170 40,145 40,110 C40,75 60,30 100,30 Z"
+          fill="#4CAF50"
+          opacity="0.9"
+        />
 
-  const sendFile = async () => {
-    if (image) {
-      let formData = new FormData();
-      formData.append("file", selectedFile);
-      let res = await axios({
-        method: "post",
-        url: "http://localhost:8000/predict",
-        data: formData,
-      });
-      if (res.status === 200) {
-        setData(res.data);
+        {/* Leaf veins */}
+        <path
+          d="M100,30 C100,90 100,170 100,170"
+          stroke="#2E7D32"
+          strokeWidth="2"
+          fill="none"
+        />
+        <path
+          d="M70,50 C90,70 110,70 130,50"
+          stroke="#2E7D32"
+          strokeWidth="2"
+          fill="none"
+        />
+        <path
+          d="M60,85 C85,100 115,100 140,85"
+          stroke="#2E7D32"
+          strokeWidth="2"
+          fill="none"
+        />
+        <path
+          d="M55,120 C80,135 120,135 145,120"
+          stroke="#2E7D32"
+          strokeWidth="2"
+          fill="none"
+        />
+
+        {/* Scan lines */}
+        <line x1="40" y1="70" x2="160" y2="70" stroke="#1976D2" strokeWidth="2" strokeDasharray="5,3" />
+        <line x1="40" y1="100" x2="160" y2="100" stroke="#1976D2" strokeWidth="2" strokeDasharray="5,3" />
+        <line x1="40" y1="130" x2="160" y2="130" stroke="#1976D2" strokeWidth="2" strokeDasharray="5,3" />
+      </svg>
+    </div>
+  );
+}
+
+function Home() {
+  const [image, setImage] = useState(null);
+  const [selectedFileName, setSelectedFileName] = useState('');
+  const [preview, setPreview] = useState(null);
+  const [result, setResult] = useState('');
+  const [error, setError] = useState('');
+  const [loading, setLoading] = useState(false);
+
+  const handleImageChange = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      setImage(file);
+      setSelectedFileName(file.name);
+      setPreview(URL.createObjectURL(file));
+      setResult('');
+      setError('');
+    } else {
+      setImage(null);
+      setSelectedFileName('');
+      setPreview(null);
+    }
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (!image) {
+      setError('Please select an image file first.');
+      return;
+    }
+
+    const formData = new FormData();
+    formData.append('image', image);
+
+    setLoading(true);
+    setResult('');
+    setError('');
+
+    try {
+      const backendUrl = process.env.REACT_APP_BACKEND_URL;
+      if (!backendUrl) {
+        console.error("Backend URL is not configured. Please set REACT_APP_BACKEND_URL in your .env file.");
+        throw new Error("Backend URL is not configured. Check console for details.");
       }
-      setIsloading(false);
-    }
-  }
 
-  const clearData = () => {
-    setData(null);
-    setImage(false);
-    setSelectedFile(null);
-    setPreview(null);
+      console.log(`Sending request to: ${backendUrl}/predict`);
+
+      const res = await fetch(`${backendUrl}/predict`, {
+        method: 'POST',
+        body: formData
+      });
+
+      if (!res.ok) {
+        throw new Error(`Server responded with status: ${res.status}`);
+      }
+
+      const data = await res.json();
+      console.log('Response from backend:', data);
+
+      if (data && data.prediction) {
+        setResult(data.prediction);
+      } else {
+        console.error('Backend response is missing the "prediction" key. Response:', data);
+        setError('Received an unexpected response format from the server.');
+      }
+    } catch (err) {
+      console.error('Error during prediction submission:', err);
+      setError(`Prediction failed: ${err.message}`);
+      setResult('');
+    } finally {
+      setLoading(false);
+    }
   };
 
-  useEffect(() => {
-    if (!selectedFile) {
-      setPreview(undefined);
-      return;
-    }
-    const objectUrl = URL.createObjectURL(selectedFile);
-    setPreview(objectUrl);
-  }, [selectedFile]);
-
-  useEffect(() => {
-    if (!preview) {
-      return;
-    }
-    setIsloading(true);
-    sendFile();
-  }, [preview]);
-
-  const onSelectFile = (files) => {
-    if (!files || files.length === 0) {
-      setSelectedFile(undefined);
-      setImage(false);
-      setData(undefined);
-      return;
-    }
-    setSelectedFile(files[0]);
-    setData(undefined);
-    setImage(true);
-  };
-
-  if (data) {
-    confidence = (parseFloat(data.confidence) * 100).toFixed(2);
-  }
+  const resultClass = result ? (
+    result.toLowerCase().includes('healthy') ? 'result-healthy' : 'result-disease'
+  ) : '';
 
   return (
-    <React.Fragment>
-      <AppBar position="static" className={classes.appbar}>
-        <Toolbar>
-          <Typography className={classes.title} variant="h6" noWrap>
-             Potato Disease Classification
-          </Typography>
-          <div className={classes.grow} />
-          <Avatar src={cblogo}></Avatar>
-        </Toolbar>
-      </AppBar>
-      <Container maxWidth={false} className={classes.mainContainer} disableGutters={true}>
-        <Grid
-          className={classes.gridContainer}
-          container
-          direction="row"
-          justifyContent="center"
-          alignItems="center"
-          spacing={2}
-        >
-          <Grid item xs={12}>
-            <Card className={`${classes.imageCard} ${!image ? classes.imageCardEmpty : ''}`}>
-              {image && <CardActionArea>
-                <CardMedia
-                  className={classes.media}
-                  image={preview}
-                  component="image"
-                  title="Contemplative Reptile"
-                />
-              </CardActionArea>
-              }
-              {!image && <CardContent className={classes.content}>
-                <DropzoneArea
-                  acceptedFiles={['image/*']}
-                  dropzoneText={"Drag and drop an image of a potato plant leaf to process"}
-                  onChange={onSelectFile}
-                />
-              </CardContent>}
-              {data && <CardContent className={classes.detail}>
-                <TableContainer component={Paper} className={classes.tableContainer}>
-                  <Table className={classes.table} size="small" aria-label="simple table">
-                    <TableHead className={classes.tableHead}>
-                      <TableRow className={classes.tableRow}>
-                        <TableCell className={classes.tableCell1}>Label:</TableCell>
-                        <TableCell align="right" className={classes.tableCell1}>Confidence:</TableCell>
-                      </TableRow>
-                    </TableHead>
-                    <TableBody className={classes.tableBody}>
-                      <TableRow className={classes.tableRow}>
-                        <TableCell component="th" scope="row" className={classes.tableCell}>
-                          {data.class}
-                        </TableCell>
-                        <TableCell align="right" className={classes.tableCell}>{confidence}%</TableCell>
-                      </TableRow>
-                    </TableBody>
-                  </Table>
-                </TableContainer>
-              </CardContent>}
-              {isLoading && <CardContent className={classes.detail}>
-                <CircularProgress color="secondary" className={classes.loader} />
-                <Typography className={classes.title} variant="h6" noWrap>
-                  Processing
-                </Typography>
-              </CardContent>}
-            </Card>
-          </Grid>
-          {data &&
-            <Grid item className={classes.buttonGrid} >
+    <div className="app-container">
+      <header className="app-header">
+        <div className="brand-container">
+          <LeafScanLogo />
+          <div className="brand-text">
+            <h1>LeafScan</h1>
+            <p className="tagline">Plant Disease Detection</p>
+          </div>
+        </div>
+      </header>
 
-              <ColorButton variant="contained" className={classes.clearButton} color="primary" component="span" size="large" onClick={clearData} startIcon={<Clear fontSize="large" />}>
-                Clear
-              </ColorButton>
-            </Grid>}
-        </Grid >
-      </Container >
-    </React.Fragment >
+      <main className="content-area">
+        <div className="upload-section">
+          <h2>Upload Leaf Image</h2>
+          <p className="instructions">
+            Take a clear photo of a plant leaf and upload it to identify if it's healthy or affected by disease.
+          </p>
+
+          <form onSubmit={handleSubmit} className="upload-form">
+            <div className="file-upload-container">
+              <label htmlFor="imageUpload" className="file-upload-label">
+                {selectedFileName || "Select Image"}
+              </label>
+              <input
+                id="imageUpload"
+                type="file"
+                accept="image/jpeg, image/png, image/jpg"
+                onChange={handleImageChange}
+                style={{ display: 'none' }}
+              />
+            </div>
+
+            {preview && (
+              <div className="preview-container">
+                <img src={preview} alt="Selected Preview" className="image-preview" />
+                <button
+                  type="button"
+                  className="change-image-btn"
+                  onClick={() => document.getElementById('imageUpload').click()}
+                >
+                  Change Image
+                </button>
+              </div>
+            )}
+
+            <button
+              type="submit"
+              className={`classify-btn ${!image ? 'disabled' : ''}`}
+              disabled={loading || !image}
+            >
+              {loading ? (
+                <>
+                  <span className="spinner"></span>
+                  Analyzing...
+                </>
+              ) : (
+                'Analyze Leaf'
+              )}
+            </button>
+          </form>
+        </div>
+
+        {(result || error) && (
+          <div className={`result-section ${resultClass}`}>
+            {error ? (
+              <div className="error-message">
+                <h3>Error</h3>
+                <p>{error}</p>
+              </div>
+            ) : (
+              <div className="result-display">
+                <h3>Analysis Result</h3>
+                <p className="result-text">{result}</p>
+                {result && (
+                  <div className="recommendation">
+                    {result.toLowerCase().includes('healthy') ? (
+                      <p>Your plant appears healthy! Continue with your current care routine.</p>
+                    ) : (
+                      <p>Disease detected. Consider treatment options appropriate for the identified condition.</p>
+                    )}
+                  </div>
+                )}
+              </div>
+            )}
+          </div>
+        )}
+      </main>
+
+      <footer className="app-footer">
+        <p>LeafScan &copy; {new Date().getFullYear()} • Upload clear, well-lit images for the most accurate results</p>
+      </footer>
+    </div>
   );
-};
+}
+
+export default Home;
+
