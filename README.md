@@ -1,31 +1,31 @@
-Plant Disease Classification
+# Plant Disease Classification
 This project is a machine learning-based system for classifying various plant diseases using leaf images. The aim is to assist farmers and agricultural professionals in early detection and treatment, thereby improving crop health and yield.
 
-Table of Contents
-Project Overview
+#Table of Contents
+#Project Overview
 
-Supported Diseases
+#Supported Diseases
 
-Technologies Used
+#Technologies Used
 
-Dataset
+#Dataset
 
-Model Architecture
+#Model Architecture
 
-Installation
+#Installation
 
-Usage
+#Usage
 
-Results
+#Results
 
-Contributing
+#Contributing
 
-License
+#License
 
-Project Overview
+#Project Overview
 Leaves from different plants exhibit unique symptoms when affected by diseases. This project leverages deep learning to detect and classify a wide range of plant diseases using image classification. It uses a Convolutional Neural Network (CNN) trained on leaf images of various crops, enabling multi-crop support and robust disease recognition.
 
-Supported Diseases
+#Supported Diseases
 The model currently supports classification for the following diseases across various plant species:
 
 diff
