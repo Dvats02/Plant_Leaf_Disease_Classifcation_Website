@@ -133,15 +133,15 @@ function Home() {
         <LeafScanLogo />
         <div className="brand-text">
           <h1>LeafScan</h1>
-          <p className="tagline">Potato Disease Detection</p>
+          <p className="tagline">Plant Disease Detection</p>
         </div>
       </header>
 
       <main className="content-area">
         <div className="upload-section">
-          <h2>Upload Potato Leaf Image</h2>
+          <h2>Upload Leaf Image</h2>
           <p className="instructions">
-            Take a clear photo of a potato plant leaf and upload it to identify if it's healthy or affected by disease.
+            Take a clear photo of a plant leaf and upload it to identify if it's healthy or affected by disease.
           </p>
 
           <form onSubmit={handleSubmit} className="upload-form">
@@ -186,32 +186,32 @@ function Home() {
               )}
             </button>
           </form>
-        </div>
 
-        {(result || error) && (
-          <div className={`result-section ${resultClass}`}>
-            {error ? (
-              <div className="error-message">
-                <h3>Error</h3>
-                <p>{error}</p>
-              </div>
-            ) : (
-              <div className="result-display">
-                <h3>Analysis Result</h3>
-                <p className="result-text">{result}</p>
-                {result && (
-                  <div className="recommendation">
-                    {result.toLowerCase().includes('healthy') ? (
-                      <p>Your potato plant appears healthy! Continue with your current care routine.</p>
-                    ) : (
-                      <p>Disease detected. Consider treatment options appropriate for the identified condition.</p>
-                    )}
-                  </div>
-                )}
-              </div>
-            )}
-          </div>
-        )}
+          {(result || error) && (
+            <div className={`result-section ${resultClass}`}>
+              {error ? (
+                <div className="error-message">
+                  <h3>Error</h3>
+                  <p>{error}</p>
+                </div>
+              ) : (
+                <div className="result-display">
+                  <h3>Analysis Result</h3>
+                  <p className="result-text">{result}</p>
+                  {result && (
+                    <div className="recommendation">
+                      {result.toLowerCase().includes('healthy') ? (
+                        <p>Your plant appears healthy! Continue with your current care routine.</p>
+                      ) : (
+                        <p>Disease detected. Consider treatment options appropriate for the identified condition.</p>
+                      )}
+                    </div>
+                  )}
+                </div>
+              )}
+            </div>
+          )}
+        </div>
       </main>
 
       <footer className="app-footer">

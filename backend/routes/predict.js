@@ -138,7 +138,6 @@ router.post("/", upload.single("image"), handleUploadErrors, (req, res) => {
 
     pythonProcess.on("error", (spawnError) => {
         console.error("Failed to start Python subprocess.", spawnError);
-        // Attempt to delete file if spawn failed
         fs.unlink(imagePath, (err) => {
             if (err) console.error("Failed to delete uploaded file after spawn error:", err);
         });

@@ -133,8 +133,8 @@ function Home() {
         <div className="brand-container">
           <LeafScanLogo />
           <div className="brand-text">
-            <h1>LeafScan</h1>
-            <p className="tagline">Plant Disease Detection</p>
+            <h1>Leaf Disease</h1>
+            <p className="tagline">Leaf Disease Detection</p>
           </div>
         </div>
       </header>
@@ -224,4 +224,3 @@ function Home() {
 }
 
 export default Home;
-
