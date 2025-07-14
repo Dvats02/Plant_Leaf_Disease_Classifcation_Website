@@ -58,7 +58,6 @@ Some diseases are crop-specific, and class names may include both plant and dise
 
 - Python  
 - TensorFlow / Keras  
-- OpenCV  
 - Scikit-learn  
 - Pandas  
 - NumPy  
