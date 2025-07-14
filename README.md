@@ -1,128 +1,100 @@
-# Plant Disease Classification
-This project is a machine learning-based system for classifying various plant diseases using leaf images. The aim is to assist farmers and agricultural professionals in early detection and treatment, thereby improving crop health and yield.
+# 🌿 Plant Disease Classification
 
-#Table of Contents
-#Project Overview
+This project is a machine learning-based system for classifying various plant diseases using leaf images. The goal is to assist farmers and agricultural professionals in early detection and treatment, ultimately improving crop health and yield.
 
-#Supported Diseases
+---
 
-#Technologies Used
+## 📑 Table of Contents
 
-#Dataset
+- [Project Overview](#project-overview)
+- [Supported Diseases](#supported-diseases)
+- [Technologies Used](#technologies-used)
+- [Dataset](#dataset)
+- [Model Architecture](#model-architecture)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Results](#results)
+- [Contributing](#contributing)
+- [License](#license)
 
-#Model Architecture
+---
 
-#Installation
+## 🌱 Project Overview
 
-#Usage
-
-#Results
-
-#Contributing
-
-#License
-
-#Project Overview
 Leaves from different plants exhibit unique symptoms when affected by diseases. This project leverages deep learning to detect and classify a wide range of plant diseases using image classification. It uses a Convolutional Neural Network (CNN) trained on leaf images of various crops, enabling multi-crop support and robust disease recognition.
 
-#Supported Diseases
-The model currently supports classification for the following diseases across various plant species:
+---
 
-diff
-Copy
-Edit
-- Apple_scab
-- Black_rot
-- Cedar_apple_rust
-- Powdery_mildew
-- Cercospora_leaf_spot / Gray_leaf_spot
-- Common_rust
-- Northern_Leaf_Blight
-- Esca (Black_Measles)
-- Leaf_blight (Isariopsis_Leaf_Spot)
-- Haunglongbing (Citrus Greening)
-- Bacterial_spot
-- Early_blight
-- Late_blight
-- Leaf_scorch
-- Leaf_Mold
-- Septoria_leaf_spot
-- Spider_mites / Two-spotted_spider_mite
-- Target_Spot
-- Tomato_Yellow_Leaf_Curl_Virus
-- Tomato_mosaic_virus
+## 🦠 Supported Diseases
+
+The model supports classification for the following diseases across various plant species:
+
+- Apple_scab  
+- Black_rot  
+- Cedar_apple_rust  
+- Powdery_mildew  
+- Cercospora_leaf_spot / Gray_leaf_spot  
+- Common_rust  
+- Northern_Leaf_Blight  
+- Esca (Black_Measles)  
+- Leaf_blight (Isariopsis_Leaf_Spot)  
+- Haunglongbing (Citrus Greening)  
+- Bacterial_spot  
+- Early_blight  
+- Late_blight  
+- Leaf_scorch  
+- Leaf_Mold  
+- Septoria_leaf_spot  
+- Spider_mites / Two-spotted_spider_mite  
+- Target_Spot  
+- Tomato_Yellow_Leaf_Curl_Virus  
+- Tomato_mosaic_virus  
+
 Some diseases are crop-specific, and class names may include both plant and disease for clarity.
 
-Technologies Used
-Python
+---
 
-TensorFlow / Keras
+## 🧪 Technologies Used
 
-OpenCV
+- Python  
+- TensorFlow / Keras  
+- OpenCV  
+- Scikit-learn  
+- Pandas  
+- NumPy  
 
-Scikit-learn
+---
 
-Pandas
+## 📂 Dataset
 
-NumPy
+The dataset comprises labeled images of plant leaves exhibiting various disease symptoms. Sources include:
 
-Dataset
-The dataset consists of labeled images of plant leaves exhibiting various disease symptoms. It has been collected from reliable sources such as Kaggle, agricultural databases, and public datasets for plant pathology.
+- Kaggle  
+- Public agricultural research datasets  
+- Open plant pathology repositories  
 
-Model Architecture
-The image classification model uses a CNN with the following layers:
+---
 
-Convolutional layers for feature extraction
+## 🧠 Model Architecture
 
-Max-pooling layers to reduce spatial dimensions
+The classification model is built using a Convolutional Neural Network (CNN) with the following components:
 
-Dense (fully connected) layers for classification
+- **Convolutional layers**: For feature extraction  
+- **Max Pooling layers**: For spatial dimensionality reduction  
+- **Dense layers**: For final classification  
+- **Softmax activation**: For multi-class output  
 
-Softmax activation for multi-class output
+Enhancements for better generalization:
 
-Data augmentation, dropout, and batch normalization techniques are also applied to improve model generalization.
+- Data Augmentation  
+- Dropout Regularization  
+- Batch Normalization  
 
-Installation
-Clone the repository:
+---
 
-bash
-Copy
-Edit
-git clone git@github.com:your-username/plant-disease-classification.git
-Navigate into the project folder:
+## ⚙️ Installation
 
-bash
-Copy
-Edit
-cd plant-disease-classification
-Install dependencies:
+1. Clone the repository:
 
-bash
-Copy
-Edit
-pip install -r requirements.txt
-Usage
-Prepare your dataset and place images inside the data/ directory, organized by class.
-
-Train the model:
-
-bash
-Copy
-Edit
-python train.py
-Predict a disease from a new leaf image:
-
-bash
-Copy
-Edit
-python predict.py --image path_to_image.jpg
-Results
-The trained model achieves over 90% accuracy on the validation dataset across multiple plant species. It generalizes well on unseen data and can identify diseases even in visually complex leaf samples.
-
-Performance metrics and example predictions are available in the results/ directory.
-
-Contributing
-Contributions are welcome! If you find bugs or have suggestions, feel free to fork the repository and submit a pull request.
-
-License
-This project is licensed under the MIT License — see the LICENSE file for more details.
+   ```bash
+   git clone https://github.com/your-username/plant-disease-classification.git
