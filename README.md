@@ -58,3 +58,47 @@ Plant_Leaf_Disease_Classification_Website/
 ├── package.json               # Backend & frontend dependencies
 ├── requirements.txt           # Python dependencies (for model training/conversion)
 
+
+
+🚀 Installation
+1️⃣ Clone the repository
+git clone https://github.com/Dvats02/Plant_Leaf_Disease_Classifcation_Website.git
+cd Plant_Leaf_Disease_Classifcation_Website
+
+
+2️⃣ Install Python dependencies
+Make sure you have Python 3.8+ installed, then run:
+pip install -r requirements.txt
+
+
+3️⃣ Download the model file
+Run the provided script to download model.h5 from Google Drive:
+python download_model.py
+
+4️⃣ Install Node.js dependencies
+Make sure you have Node.js 16+ installed, then run:
+cd backend
+npm install
+
+cd backend
+npm install
+
+cd frontend
+npm install
+npm start
+
+
+
+download_model.py:
+import gdown
+import os
+
+file_id = "YOUR_FILE_ID"
+url = f["https://drive.google.com/uc?id={file_id}"](https://drive.google.com/file/d/1PbLT4j4FnIHPgkI4MAtD9R2BaCWymTZ0/view?usp=sharing)
+output = "model.h5"
+
+if not os.path.exists(output):
+    print("📥 Downloading model.h5 from Google Drive...")
+    gdown.download(url, output, quiet=False)
+    print("✅ Download complete!")
+
