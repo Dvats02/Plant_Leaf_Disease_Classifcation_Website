@@ -46,3 +46,15 @@ The model can classify plant leaves into **32 categories** including:
 ---
 
 ## 📂 Project Structure
+Plant_Leaf_Disease_Classification_Website/
+│
+├── __pycache__/               # Python cache files (from model training scripts)
+├── backend/                   # Node.js + Express backend for API and model handling
+├── frontend/                  # React-based frontend for user interaction
+├── .gitattributes
+├── .gitignore
+├── README.md
+├── package-lock.json          # Node.js dependency lock file
+├── package.json               # Backend & frontend dependencies
+├── requirements.txt           # Python dependencies (for model training/conversion)
+
